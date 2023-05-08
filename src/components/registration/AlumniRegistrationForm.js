@@ -40,12 +40,9 @@ function AlumniRegistrationForm(props) {
     <div>
       <Form
         form={regForm}
-        // name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
-        // initialValues={{ remember: true }}
-        // autoComplete="off"
         onFinish={handleSubmit}
       >
         <Form.Item
@@ -55,8 +52,6 @@ function AlumniRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="name"
-            // value={props.alumniFormFields.name}
             placeholder="Firstname Lastname"
             onChange={(e) => props.setFormFields("name", e.target.value)}
           />
@@ -95,7 +90,6 @@ function AlumniRegistrationForm(props) {
           <Select
             disabled={disableFields}
             name="batch"
-            // value={props.alumniFormFields.batch}
             style={{ width: 120 }}
             onChange={(e) => props.setFormFields("batch", e)}
             options={batchYears}
@@ -114,7 +108,6 @@ function AlumniRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="organization"
             value={props.alumniFormFields.organization}
             placeholder="Current company name"
             onChange={(e) =>
@@ -136,8 +129,6 @@ function AlumniRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="designation"
-            // value={props.alumniFormFields.designation}
             placeholder="YOur designation in the company"
             onChange={(e) => props.setFormFields("designation", e.target.value)}
           />
@@ -152,8 +143,6 @@ function AlumniRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="city"
-            // value={props.alumniFormFields.city}
             placeholder="Enter current city of work"
             onChange={(e) => props.setFormFields("city", e.target.value)}
           />

@@ -7,10 +7,10 @@ let batchYears = [];
 
 const latestBatch =
   new Date().getMonth() >= 4
-    ? new Date().getFullYear()
-    : new Date().getFullYear() - 1;
+    ? new Date().getFullYear() + 1
+    : new Date().getFullYear();
 
-for (let index = 1989; index <= latestBatch; index++) {
+for (let index = latestBatch; index < latestBatch + 3; index++) {
   const tempYear = { value: index, label: index };
   batchYears.push(tempYear);
 }
@@ -39,12 +39,9 @@ function StudentRegistrationForm(props) {
     <div>
       <Form
         form={regForm}
-        // name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
-        // initialValues={{ remember: true }}
-        // autoComplete="off"
         onFinish={handleSubmit}
       >
         <Form.Item
@@ -54,7 +51,6 @@ function StudentRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="name"
             value={props.studentFormFields.name}
             placeholder="Firstname Lastname"
             onChange={(e) => props.setFormFields("name", e.target.value)}
@@ -77,8 +73,6 @@ function StudentRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="email"
-            // value={props.studentFormFields.email}
             placeholder="enter email address"
             onChange={(e) => {
               props.setFormFields("email", e.target.value);
@@ -115,8 +109,6 @@ function StudentRegistrationForm(props) {
         >
           <Input
             disabled={disableFields}
-            // name="designation"
-            // value={props.studentFormFields.designation}
             placeholder="ie: 00ICXXX000"
             onChange={(e) => props.setFormFields("studentId", e.target.value)}
           />
@@ -129,8 +121,6 @@ function StudentRegistrationForm(props) {
         >
           <Select
             disabled={disableFields}
-            // name="batch"
-            // value={props.studentFormFields.batch}
             style={{ width: 120 }}
             onChange={(e) => props.setFormFields("batch", e)}
             options={batchYears}

@@ -5,7 +5,7 @@ import { func } from "prop-types";
 import { useMount, useSetState, useUpdateEffect } from "react-use";
 import FirstUserChoose from "./FirstUserChoose";
 import AlumniStudentForm from "./AlumniStudentForm";
-import DisplayForm from "./DisplayForm";
+import PreviewForm from "./PreviewForm";
 
 function RegistrationModal(props) {
   const { token } = theme.useToken();
@@ -43,6 +43,7 @@ function RegistrationModal(props) {
   };
 
   const setFormFields = (fieldName, value) => {
+    formSubmitted(false);
     if (state.alumniOrStudent === "Alumni") {
       const alumniFormFields = { ...state.alumniFormFields };
       alumniFormFields[fieldName] = value;
@@ -82,7 +83,7 @@ function RegistrationModal(props) {
       key: 2,
       title: "Preview",
       content: (
-        <DisplayForm
+        <PreviewForm
           formFields={
             state.alumniOrStudent === "Alumni"
               ? state.alumniFormFields

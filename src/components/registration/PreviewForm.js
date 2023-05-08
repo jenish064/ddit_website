@@ -1,12 +1,8 @@
 import React from "react";
 import { object, string } from "prop-types";
 import { Form, Card } from "antd";
-import { useMount } from "react-use";
 
-function DisplayForm(props) {
-  useMount(() => {
-    console.log("werdzcvxz", props.formFields.dob.$d.toString().slice(4, 15));
-  });
+function PreviewForm(props) {
   return (
     <div>
       <div>
@@ -58,9 +54,9 @@ function DisplayForm(props) {
   );
 }
 
-DisplayForm.propType = {
+PreviewForm.propType = {
   formFields: object,
   alumniOrStudent: string,
 };
 
-export default DisplayForm;
+export default PreviewForm;

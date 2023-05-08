@@ -36,6 +36,7 @@ function Card() {
           }}
           closeIcon={<FontAwesomeIcon icon={faXmark} />}
           destroyOnClose
+          maskClosable={false}
         >
           <RegistrationModal openRegister={openRegister} />
         </Modal>
